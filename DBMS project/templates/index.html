@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>population data</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 100px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin: 0 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .image {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .buttons button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .buttons button img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .buttons button img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Style for About Us section */
+        #about-us {
+            height: 500px; /* Adjust this height according to your content */
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 100px; /* Adjust vertical alignment */
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <a href="G:\DBMS project\templates/index.html"><li>HOME</li></a>
+            <a href="#about-us"><li>ABOUT US</li></a>
+        </ul>
+    </div>
+    <div class="image">
+        <img id="populationImg" src="/static/population.jpg" alt="image">
+    </div>
+    <div class="buttons">
+        <button>
+            <a href="manager.html">
+            <img id="managerImg" src="/static/manager.png" alt="manager"></a>
+        </button>
+        <h3>manager</h3>
+        <button>
+            <a href="user.html">
+            <img id="userImg" src="/static/user.jpeg" alt="user"></a>
+        </button>
+        <h3>user</h3>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about-us">
+        <h2>About Us</h2>
+        <p>
+            Welcome to our website! We are dedicated to providing comprehensive and up-to-date world population data to users worldwide. Our mission is to empower individuals, researchers, policymakers, and organizations with accurate demographic information to better understand global population trends and make informed decisions.
+            </p>
+            <p>
+                <h4>Our Vision</h4>
+            At [WORLD POPULATION DATA], we envision a world where everyone has access to reliable population data and insights. By providing easy-to-use tools and resources, we aim to foster a deeper understanding of population dynamics and their impact on societies, economies, and the environment.</p>
+            <p>
+            <h4>Our Mission</h4>
+            
+            Our mission is to:
+            
+                Provide accurate and timely world population data from reputable sources.
+                Develop user-friendly interfaces and tools for exploring and analyzing population trends.
+                Educate and raise awareness about key demographic issues and challenges.
+                Support research, innovation, and collaboration in the field of population studies.
+                Empower users to make informed decisions and contribute to positive social change.
+            </p>
+    </div>
+
+    <script>
+        const managerImg = document.getElementById('managerImg');
+        const userImg = document.getElementById('userImg');
+
+        managerImg.addEventListener('mouseenter', () => {
+            managerImg.style.transform = 'scale(1.5)';
+        });
+
+        managerImg.addEventListener('mouseleave', () => {
+            managerImg.style.transform = 'scale(1)';
+        });
+
+        userImg.addEventListener('mouseenter', () => {
+            userImg.style.transform = 'scale(1.5)';
+        });
+
+        userImg.addEventListener('mouseleave', () => {
+            userImg.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>

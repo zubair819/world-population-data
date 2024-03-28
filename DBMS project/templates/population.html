@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .data-table {
+            margin-bottom: 50px;
+        }
+
+        .data-section {
+            margin-bottom: 30px;
+        }
+
+        .data-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .no-data {
+            text-align: center;
+            font-style: italic;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Population Data</h1>
+        
+        <div class="data-section">
+            <h2 class="data-title">Country Data</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Country Name</th>
+                        <th>Number of States</th>
+                        <th>Continent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for country in country_data %}
+                        <tr>
+                            <td>{{ country[0] }}</td>
+                            <td>{{ country[1] }}</td>
+                            <td>{{ country[2] }}</td>
+                        </tr>
+                    {% endfor %}
+                    {% if not country_data %}
+                        <tr>
+                            <td colspan="3" class="no-data">No country data available</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="data-section">
+            <h2 class="data-title">Population Data Per Year</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Country Name</th>
+                        <th>Population</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for data in population_data %}
+                        <tr>
+                            <td>{{ data[0] }}</td>
+                            <td>{{ data[1] }}</td>
+                            <td>{{ data[2] }}</td>
+                            <td>{{ data[3] }}</td>
+                        </tr>
+                    {% endfor %}
+                    {% if not population_data %}
+                        <tr>
+                            <td colspan="4" class="no-data">No population data available</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="data-section">
+            <h2 class="data-title">State Population Data</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>State Name</th>
+                        <th>Country Name</th>
+                        <th>Year</th>
+                        <th>State Population</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for state in state_data %}
+                        <tr>
+                            <td>{{ state[0] }}</td>
+                            <td>{{ state[1] }}</td>
+                            <td>{{ state[2] }}</td>
+                            <td>{{ state[3] }}</td>
+                        </tr>
+                    {% endfor %}
+                    {% if not state_data %}
+                        <tr>
+                            <td colspan="4" class="no-data">No state population data available</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
